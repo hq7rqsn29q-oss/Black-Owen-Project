@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Owen – AI Powered Blockchain</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <img src="assets/logo.png" class="logo">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="blockchain.html">Blockchain</a>
+        <a href="wallet.html">Wallet</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>BLACK OWEN</h1>
+    <p>The Next-Gen AI-Enhanced Blockchain</p>
+    <a href="wallet.html" class="btn">Get Wallet</a>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+Black-Owen-Project/
+│
+├─ index.html
+├─ about.html
+├─ blockchain.html
+├─ wallet.html
+│
+├─ css/
+│   └─ style.css
+│
+├─ js/
+│   └─ script.js
+│
+└─ assets/
+    ├─ logo.png
+    └─ bg.jpg
