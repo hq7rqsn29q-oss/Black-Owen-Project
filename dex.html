@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Owen DEX</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000814;
+            color: #e6f1ff;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: rgba(0, 40, 80, 0.7);
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            color: #00aaff;
+            font-weight: bold;
+            border-bottom: 1px solid #003355;
+        }
+
+        .wrapper {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .trade-box {
+            background: rgba(0, 20, 50, 0.8);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #005599;
+            margin-bottom: 30px;
+        }
+
+        .trade-box h2 {
+            color: #00aaff;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            background: #001a33;
+            color: white;
+            border: 1px solid #004477;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            background: #0077cc;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background: #0099ff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    ⚡ White Whale DEX
+</header>
+
+<div class="wrapper">
+
+    <div class="trade-box">
+        <h2>Swap</h2>
+
+        <label>From:</label>
+        <select>
+            <option>WWC - White Whale Coin</option>
+            <option>USDT</option>
+            <option>BTC</option>
+        </select>
+
+        <label>Amount:</label>
+        <input type="number" placeholder="0.0">
+
+        <label>To:</label>
+        <select>
+            <option>USDT</option>
+            <option>WWC - White Whale Coin</option>
+            <option>BTC</option>
+        </select>
+
+        <button>Swap</button>
+    </div>
+
+    <div class="trade-box">
+        <h2>Liquidity</h2>
+
+        <label>Add Liquidity Pair:</label>
+        <select>
+            <option>WWC / USDT</option>
+            <option>WWC / BTC</option>
+        </select>
+
+        <input type="number" placeholder="Amount WWC">
+        <input type="number" placeholder="Amount USDT">
+
+        <button>Add Liquidity</button>
+    </div>
+
+</div>
+
+</body>
+</html>
