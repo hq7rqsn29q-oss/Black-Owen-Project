@@ -1,117 +1,25 @@
-/* === Black Owl Ecosystem — Global Dark Theme === */
-
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", Arial, sans-serif;
-}
-
+/* --- Фон с градиентом и SVG-шумом --- */
 body {
-    background: #0d0d0f; /* глубокий темный фон */
+    /* fallback gradient */
+    background: linear-gradient(160deg, #08060a 0%, #120018 100%);
     color: #e6e6e6;
     min-height: 100vh;
+    /* overlay noise image (uploaded to repo as noise.svg) */
+    background-image: url('noise.svg'), linear-gradient(160deg, #08060a 0%, #120018 100%);
+    background-size: cover, cover;
+    background-position: center center, center center;
+    background-repeat: no-repeat, no-repeat;
 }
 
-/* HEADER */
-header {
-    text-align: center;
-    padding: 40px 20px;
-    color: #fff;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
+/* logo rules — использовать logo.svg */
 header img {
-    width: 100px;
+    width: 110px;
     height: auto;
-}
-
-/* MAIN LAYOUT */
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-    padding-bottom: 40px;
-}
-
-/* CARD */
-.card {
-    background: #13131a;
-    border: 1px solid #2d2d38;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0px 0px 15px rgba(98, 0, 255, 0.08);
-}
-
-.card h1, .card h2 {
-    color: #c38cff; /* фирменный фиолетовый */
-    margin-bottom: 12px;
-}
-
-/* LINKS & BUTTONS */
-a {
-    color: #bb86ff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-button {
-    padding: 12px 20px;
-    background: #7a32ff;
-    border: none;
-    color: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: 0.2s ease;
-}
-
-button:hover {
-    background: #9b59ff;
-}
-
-/* WALLET DETAILS */
-.address, .balance, .token-info {
-    margin-top: 10px;
-    font-size: 17px;
-    color: #f1e7ff;
-    word-break: break-all;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    color: #666;
-    font-size: 14px;
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-footer a {
-    color: #777;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    header {
-        font-size: 22px;
-    }
-    header img {
-        width: 80px;
-    }
-    .card {
-        padding: 18px;
-    }
+    display: block;
+    margin: 0 auto;
+    /* небольшая яркая обводка чтобы сова не сливалась */
+    filter: drop-shadow(0 8px 20px rgba(110, 20, 220, 0.28));
+    border-radius: 18px; /* если хочешь мягкие углы */
+    background: transparent;
+    padding: 6px;
 }
