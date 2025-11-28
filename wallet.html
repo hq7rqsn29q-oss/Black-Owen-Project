@@ -3,177 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>White Whale Wallet</title>
+<title>Black Owen Wallet</title>
 
 <style>
     body {
         margin: 0;
-        font-family: 'Inter', sans-serif;
-        background: linear-gradient(to bottom, #001f2f 0%, #00384d 70%, #00485f 100%);
-        color: #e9faff;
+        padding: 0;
+        background: #0a0f1f;
+        color: white;
+        font-family: Arial, sans-serif;
         text-align: center;
-        overflow-x: hidden;
     }
 
-    /* Ocean Waves */
-    .waves {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        z-index: -1;
-        opacity: 0.35;
-    }
-
-    /* Hero section */
     header {
-        padding: 80px 20px 40px;
-    }
-    header img {
-        width: 140px;
-        border-radius: 12px;
-        box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
-    }
-    header h1 {
-        margin-top: 20px;
-        font-size: 42px;
-        font-weight: 800;
-        color: #aef6ff;
-    }
-    header p {
-        font-size: 18px;
-        opacity: 0.85;
+        padding: 20px;
+        font-size: 28px;
+        font-weight: bold;
     }
 
-    /* Buttons */
-    .btn {
-        background: rgba(0, 200, 200, 0.2);
-        border: 1px solid #45f3ff;
-        padding: 12px 30px;
-        border-radius: 10px;
-        font-size: 18px;
-        margin: 10px;
-        cursor: pointer;
-        color: #e6ffff;
-        transition: 0.3s;
-        backdrop-filter: blur(4px);
-    }
-    .btn:hover {
-        background: rgba(0, 200, 200, 0.4);
-        box-shadow: 0 0 18px #4ef2ff;
-    }
-
-    /* Cards */
     .card {
-        max-width: 420px;
-        margin: 25px auto;
-        padding: 25px;
-        background: rgba(255, 255, 255, 0.06);
-        border-radius: 16px;
-        box-shadow: 0 0 18px rgba(0, 255, 255, 0.08);
-        backdrop-filter: blur(6px);
-    }
-
-    textarea, input {
+        background: rgba(255,255,255,0.05);
         width: 90%;
-        margin-top: 15px;
-        padding: 12px;
-        background: rgba(0, 50, 70, 0.2);
-        border: 1px solid #4ef2ff;
-        border-radius: 10px;
-        color: #e9faff;
-        backdrop-filter: blur(3px);
+        max-width: 450px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 20px rgba(0,255,255,0.2);
     }
 
-    .small {
-        font-size: 14px;
-        opacity: 0.7;
+    button {
+        padding: 12px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        background: #00aaff;
+        color: white;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    button:hover {
+        background: #0088dd;
+    }
+
+    .address {
+        margin-top: 15px;
+        font-size: 16px;
+        word-wrap: break-word;
+    }
+
+    .balance {
+        font-size: 20px;
+        margin-top: 15px;
     }
 </style>
-
 </head>
+
 <body>
 
-<header>
-    <img src="logo.png" alt="White Whale Logo">
-    <h1>White Whale Wallet</h1>
-    <p>The Ocean-Powered Web3 Wallet • Secure • Fast • Beautiful</p>
+<header>🦉 Black-Owen Wallet</header>
 
-    <button class="btn" onclick="showCreate()">Create Wallet</button>
-    <button class="btn" onclick="showImport()">Import Wallet</button>
-</header>
-
-<!-- Create Wallet -->
-<div id="create" class="card" style="display:none;">
-    <h2>Create New Wallet</h2>
-    <p class="small">Your seed phrase — keep it secret!</p>
-    <textarea id="seed" rows="3" readonly></textarea>
-    <button class="btn" onclick="generateSeed()">Generate</button>
-    <button class="btn" onclick="copySeed()">Copy</button>
-</div>
-
-<!-- Import Wallet -->
-<div id="import" class="card" style="display:none;">
-    <h2>Import Wallet</h2>
-    <textarea id="importSeed" rows="3" placeholder="Enter your seed phrase..."></textarea>
-    <button class="btn" onclick="importWallet()">Import</button>
-</div>
-
-<!-- Dashboard -->
-<div id="dashboard" class="card" style="display:none;">
+<div class="card">
     <h2>Your Wallet</h2>
-    <p>Address:</p>
-    <input id="address" readonly>
+    <button onclick="connectWallet()">Connect MetaMask</button>
 
-    <p>Balance:</p>
-    <input id="balance" value="0 WWC" readonly>
-
-    <button class="btn" onclick="copyAddress()">Copy Address</button>
+    <div class="address" id="walletAddress"></div>
+    <div class="balance" id="ethBalance"></div>
 </div>
-
-<!-- Waves SVG -->
-<img src="https://raw.githubusercontent.com/ajayns/svg-waves/master/waves.svg" class="waves">
 
 <script>
-    function showCreate() {
-        document.getElementById("create").style.display = "block";
-        document.getElementById("import").style.display = "none";
+async function connectWallet() {
+    if (!window.ethereum) {
+        alert("MetaMask не найден. Установите расширение.");
+        return;
     }
 
-    function showImport() {
-        document.getElementById("import").style.display = "block";
-        document.getElementById("create").style.display = "none";
-    }
+    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+    const address = accounts[0];
 
-    function generateSeed() {
-        const words = ["ocean","blue","whale","light","future","aqua","node","chain","deep","wave","pearl","sky","crypto","swift"];
-        let seed = [];
-        for (let i = 0; i < 12; i++) {
-            seed.push(words[Math.floor(Math.random() * words.length)]);
-        }
-        document.getElementById("seed").value = seed.join(" ");
-    }
+    document.getElementById("walletAddress").innerHTML =
+        "Address: " + address;
 
-    function copySeed() {
-        navigator.clipboard.writeText(
-            document.getElementById("seed").value
-        );
-        alert("Seed phrase copied!");
-    }
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const balance = await provider.getBalance(address);
 
-    function importWallet() {
-        let seed = document.getElementById("importSeed").value.trim();
-        if (seed.length < 10) return alert("Invalid seed phrase.");
-        document.getElementById("dashboard").style.display = "block";
-        document.getElementById("address").value = "WW-" + btoa(seed).slice(0, 12);
-    }
-
-    function copyAddress() {
-        navigator.clipboard.writeText(
-            document.getElementById("address").value
-        );
-        alert("Address copied!");
-    }
+    document.getElementById("ethBalance").innerHTML =
+        "ETH Balance: " + ethers.utils.formatEther(balance);
+}
 </script>
+
+<!-- ethers.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
 
 </body>
 </html>
