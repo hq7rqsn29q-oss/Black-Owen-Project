@@ -1,90 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black Owen Project</title>
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(circle at top, #0a0f1f, #000);
-      font-family: Arial, sans-serif;
-      color: white;
-      overflow-x: hidden;
-      text-align: center;
-    }
-
-    /* Анимация звезд */
-    .stars {
-      position: fixed;
-      width: 200%;
-      height: 200%;
-      background: url('https://raw.githubusercontent.com/itsron717/animated-stars-background/master/stars.png');
-      animation: moveStars 60s linear infinite;
-      opacity: 0.3;
-    }
-
-    @keyframes moveStars {
-      from { transform: translateY(0); }
-      to   { transform: translateY(-1000px); }
-    }
-
-    /* Логотип */
-    .logo {
-      margin-top: 120px;
-      width: 260px;
-      animation: fadeIn 2.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-
-    .title {
-      font-size: 42px;
-      margin-top: 20px;
-      font-weight: bold;
-      animation: fadeIn 3s ease;
-    }
-
-    .subtitle {
-      margin-top: 10px;
-      font-size: 20px;
-      opacity: 0.7;
-    }
-
-    .btn {
-      margin-top: 40px;
-      display: inline-block;
-      padding: 15px 35px;
-      font-size: 20px;
-      color: white;
-      border: 2px solid #00aaff;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #00aaff;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Owen (BOC) — Web3 Ecosystem</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="stars"></div>
+<header>
+    🐺 Black Owen Ecosystem
+</header>
 
-  <!-- ЛОГОТИП -->
-  <img class="logo" src="7D2CA06D-BFB7-4137-98AE-6A82F8737093.png" alt="Black Owen Logo">
+<div class="container">
 
-  <div class="title">Black-Owen-Project</div>
-  <div class="subtitle">Next-gen Web • AI • Blockchain • Design</div>
+    <div class="card">
+        <h1>Welcome to Black Owen</h1>
+        <p>
+            BOC — цифровая экосистема будущего: собственный токен, кошелёк, DEX-биржа,
+            блокчейн-эксплорер и полный контроль в одной системе.
+        </p>
+        <button onclick="location.href='wallet.html'">Open Wallet</button>
+    </div>
 
-  <a href="#" class="btn">Explore</a>
+    <div class="card">
+        <h2>Навигация</h2>
+        <p><a href="wallet.html">Black Owen Wallet</a></p>
+        <p><a href="dex.html">BOC DEX Exchange</a></p>
+        <p><a href="explorer.html">Blockchain Explorer</a></p>
+        <p><a href="coin.html">BOC Token Information</a></p>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Black Owen Project — All Rights Reserved
+</footer>
 
 </body>
 </html>
