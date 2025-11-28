@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Owen Explorer</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #000814;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    header {
+        padding: 20px;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .section {
+        width: 90%;
+        max-width: 900px;
+        background: #001d3d;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h2 {
+        color: #00a8ff;
+    }
+
+    .refresh {
+        background: transparent;
+        border: 2px solid #00a8ff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #00a8ff;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .refresh:hover {
+        background: #00a8ff;
+        color: black;
+    }
+</style>
+
+</head>
+
+<body>
+
+<header>🦉 Black Owen Explorer</header>
+
+<div class="section">
+    <h2>Network Status</h2>
+    <p id="networkStatus">Loading...</p>
+</div>
+
+<div class="section">
+    <h2>Latest Blocks</h2>
+    <div id="blocks">Loading...</div>
+</div>
+
+<div class="section">
+    <h2>Latest Transactions</h2>
+    <div id="txs">Loading...</div>
+</div>
+
+<div class="section">
+    <h2>Token Supply</h2>
+    <p>Total Supply: <b>18,000,000 BOC</b></p>
+</div>
+
+<button class="refresh" onclick="refreshExplorer()">Refresh</button>
+
+<script>
+function refreshExplorer() {
+    document.getElementById("networkStatus").innerText = "Online";
+    document.getElementById("blocks").innerText = "Block #000001 – #000010";
+    document.getElementById("txs").innerText = "TX: 0x123...abc, 0x456...def, ...";
+}
+refreshExplorer();
+</script>
+
+</body>
+</html>
