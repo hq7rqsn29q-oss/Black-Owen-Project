@@ -1,25 +1,82 @@
-/* --- Фон с градиентом и SVG-шумом --- */
+/* === BLACK OWL — GLOBAL STYLE === */
+
 body {
-    /* fallback gradient */
-    background: linear-gradient(160deg, #08060a 0%, #120018 100%);
-    color: #e6e6e6;
-    min-height: 100vh;
-    /* overlay noise image (uploaded to repo as noise.svg) */
-    background-image: url('noise.svg'), linear-gradient(160deg, #08060a 0%, #120018 100%);
-    background-size: cover, cover;
-    background-position: center center, center center;
-    background-repeat: no-repeat, no-repeat;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #EDEAFF;
+    background: linear-gradient(120deg, #0A0A0F, #14001F);
+    background-attachment: fixed;
 }
 
-/* logo rules — использовать logo.svg */
-header img {
-    width: 110px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    /* небольшая яркая обводка чтобы сова не сливалась */
-    filter: drop-shadow(0 8px 20px rgba(110, 20, 220, 0.28));
-    border-radius: 18px; /* если хочешь мягкие углы */
-    background: transparent;
-    padding: 6px;
+/* LOGO */
+.logo-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.logo-container img {
+    width: 160px;
+    filter: drop-shadow(0 0 12px #8A2CFF);
+}
+
+/* HEADERS */
+h1, h2, h3 {
+    color: #B980FF;
+    text-shadow: 0 0 10px #7A1FFF;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(138, 44, 255, 0.4);
+    padding: 25px;
+    margin: 20px auto;
+    width: 85%;
+    max-width: 800px;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px rgba(138, 44, 255, 0.2);
+}
+
+/* BUTTONS */
+button, .btn {
+    background: linear-gradient(90deg, #8A2CFF, #5A00D1);
+    border: none;
+    padding: 14px 24px;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.2s;
+    box-shadow: 0 0 10px #7A1FFF;
+}
+
+button:hover, .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px #B980FF;
+}
+
+button:active, .btn:active {
+    transform: scale(.97);
+}
+
+/* LINKS */
+a {
+    color: #B980FF;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #EDEAFF;
+    text-shadow: 0 0 10px #B980FF;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 14px;
+    opacity: 0.9;
 }
