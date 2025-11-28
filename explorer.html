@@ -1,90 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Black Owen Explorer</title>
-
-<style>
-    body {
-        margin: 0;
-        background: #000814;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
-
-    header {
-        padding: 20px;
-        font-size: 32px;
-        font-weight: bold;
-    }
-
-    .section {
-        width: 90%;
-        max-width: 900px;
-        background: #001d3d;
-        margin: 20px auto;
-        padding: 20px;
-        border-radius: 12px;
-    }
-
-    h2 {
-        color: #00a8ff;
-    }
-
-    .refresh {
-        background: transparent;
-        border: 2px solid #00a8ff;
-        padding: 10px 20px;
-        border-radius: 10px;
-        color: #00a8ff;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    .refresh:hover {
-        background: #00a8ff;
-        color: black;
-    }
-</style>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Owl Explorer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>🦉 Black Owen Explorer</header>
+<header>
+    <img src="logo.png" alt="Black Owl Logo">
+    Black Owl Ecosystem
+</header>
 
-<div class="section">
-    <h2>Network Status</h2>
-    <p id="networkStatus">Loading...</p>
+<div class="container">
+
+    <div class="card">
+        <h1>🦉 Black Owl Explorer</h1>
+        <p>
+            Прозрачность и наблюдаемость сети Black Owl.  
+            Следите за блоками, транзакциями, адресами и активностью валидаторов.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Поиск по сети</h2>
+        <p>Введите хеш транзакции, номер блока или адрес кошелька:</p>
+        <input type="text" placeholder="Например: 0x09fa... или block 1002" style="width:100%; padding:10px; border-radius:6px; border:1px solid #444; background:#1a1a1a; color:#fff;">
+        <button class="main-btn" style="margin-top:12px;">Искать</button>
+    </div>
+
+    <div class="card">
+        <h2>Статус сети</h2>
+        <ul>
+            <li>Последний блок: <strong>#0000000</strong></li>
+            <li>Среднее время блока: <strong>•</strong></li>
+            <li>Сеть: <strong>Black Owl Mainnet</strong></li>
+            <li>Токен: <strong>BOC</strong></li>
+        </ul>
+        <p><i>Позже сюда можно подключить реальные данные через API.</i></p>
+    </div>
+
+    <div class="card">
+        <h2>Последние блоки</h2>
+        <p>Динамическая таблица добавится позже.</p>
+    </div>
+
+    <div class="card">
+        <h2>Последние транзакции</h2>
+        <p>Здесь будут отображаться входящие данные из сети.</p>
+    </div>
+
 </div>
 
-<div class="section">
-    <h2>Latest Blocks</h2>
-    <div id="blocks">Loading...</div>
-</div>
-
-<div class="section">
-    <h2>Latest Transactions</h2>
-    <div id="txs">Loading...</div>
-</div>
-
-<div class="section">
-    <h2>Token Supply</h2>
-    <p>Total Supply: <b>18,000,000 BOC</b></p>
-</div>
-
-<button class="refresh" onclick="refreshExplorer()">Refresh</button>
-
-<script>
-function refreshExplorer() {
-    document.getElementById("networkStatus").innerText = "Online";
-    document.getElementById("blocks").innerText = "Block #000001 – #000010";
-    document.getElementById("txs").innerText = "TX: 0x123...abc, 0x456...def, ...";
-}
-refreshExplorer();
-</script>
+<footer>
+    © 2025 Black Owl Ecosystem — Explorer
+</footer>
 
 </body>
 </html>
