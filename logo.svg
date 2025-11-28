@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Black Owl Logo">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#7a32ff"/>
+      <stop offset="1" stop-color="#3b0b66"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feOffset dx="0" dy="6" result="o"/>
+      <feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- фон прозрачный -->
+  <rect width="100%" height="100%" fill="none"/>
+
+  <!-- стилизованная голова совы -->
+  <g transform="translate(140,120) scale(0.74)">
+    <g filter="url(#shadow)">
+      <path d="M375 40
+               C260 40 180 120 140 240
+               C120 320 120 460 220 560
+               C280 620 360 680 375 760
+               C390 680 470 620 530 560
+               C630 460 630 320 610 240
+               C570 120 495 40 375 40 Z"
+            fill="url(#g1)"/>
+    </g>
+
+    <!-- глаза -->
+    <g transform="translate(70,130) scale(0.7)">
+      <ellipse cx="170" cy="230" rx="80" ry="100" fill="#0b0b0b"/>
+      <ellipse cx="350" cy="230" rx="80" ry="100" fill="#0b0b0b"/>
+      <circle cx="170" cy="230" r="38" fill="#ffd36b"/>
+      <circle cx="350" cy="230" r="38" fill="#ffd36b"/>
+      <circle cx="170" cy="230" r="18" fill="#0b0b0b"/>
+      <circle cx="350" cy="230" r="18" fill="#0b0b0b"/>
+    </g>
+
+    <!-- клюв -->
+    <path d="M340 360 C360 410 320 420 300 360 Z" fill="#ffb34d" transform="translate(10,70) scale(1.0)"/>
+
+    <!-- декор пера -->
+    <g transform="translate(90,30) scale(0.9)" fill="#ffffff" opacity="0.06">
+      <path d="M200 40 C220 20 260 20 280 40 C300 60 300 120 280 140 C260 160 220 160 200 140 C180 120 180 60 200 40 Z"/>
+      <path d="M420 40 C440 20 480 20 500 40 C520 60 520 120 500 140 C480 160 440 160 420 140 C400 120 400 60 420 40 Z"/>
+    </g>
+  </g>
+
+  <!-- подпись (опционально) -->
+  <text x="50%" y="96%" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="58" fill="#cdb2ff" opacity="0.95">Black Owl</text>
+</svg>
