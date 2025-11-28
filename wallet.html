@@ -1,100 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Black Owen Wallet</title>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: #0a0f1f;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
-
-    header {
-        padding: 20px;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .card {
-        background: rgba(255,255,255,0.05);
-        width: 90%;
-        max-width: 450px;
-        margin: 20px auto;
-        padding: 20px;
-        border-radius: 16px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0 20px rgba(0,255,255,0.2);
-    }
-
-    button {
-        padding: 12px 20px;
-        font-size: 18px;
-        border: none;
-        border-radius: 10px;
-        background: #00aaff;
-        color: white;
-        cursor: pointer;
-        margin-top: 15px;
-    }
-
-    button:hover {
-        background: #0088dd;
-    }
-
-    .address {
-        margin-top: 15px;
-        font-size: 16px;
-        word-wrap: break-word;
-    }
-
-    .balance {
-        font-size: 20px;
-        margin-top: 15px;
-    }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Owl Wallet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>🦉 Black-Owen Wallet</header>
+<header>
+    <img src="logo.png" alt="Black Owl Logo">
+    Black Owl Ecosystem
+</header>
 
-<div class="card">
-    <h2>Your Wallet</h2>
-    <button onclick="connectWallet()">Connect MetaMask</button>
+<div class="container">
 
-    <div class="address" id="walletAddress"></div>
-    <div class="balance" id="ethBalance"></div>
+    <div class="card">
+        <h1>🦉 Black Owl Wallet</h1>
+        <p>
+            Ваш безопасный криптокошелёк для хранения, отправки и получения BOC
+            и других активов экосистемы Black Owl.
+            <br><br>
+            Кошелёк использует современные алгоритмы шифрования и распределённые ключи.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Функции кошелька</h2>
+        <ul>
+            <li>Создание и импорт кошельков</li>
+            <li>Генерация мнемонической фразы</li>
+            <li>Отправка и получение BOC</li>
+            <li>Поддержка подключаемых модулей</li>
+            <li>Интеграция с Black Owl DEX</li>
+            <li>Повышенный уровень безопасности</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Скачать приложение</h2>
+        <p>Скоро будет доступно:</p>
+        <p>📱 iOS • 🤖 Android • 🖥 Desktop</p>
+    </div>
+
+    <div class="card">
+        <h2>Документация</h2>
+        <p><a href="docs.html">Перейти в раздел документации</a></p>
+    </div>
+
 </div>
 
-<script>
-async function connectWallet() {
-    if (!window.ethereum) {
-        alert("MetaMask не найден. Установите расширение.");
-        return;
-    }
-
-    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-    const address = accounts[0];
-
-    document.getElementById("walletAddress").innerHTML =
-        "Address: " + address;
-
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const balance = await provider.getBalance(address);
-
-    document.getElementById("ethBalance").innerHTML =
-        "ETH Balance: " + ethers.utils.formatEther(balance);
-}
-</script>
-
-<!-- ethers.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+<footer>
+    © 2025 Black Owl Ecosystem — Black Owl Wallet
+</footer>
 
 </body>
 </html>
